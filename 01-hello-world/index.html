@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello word in Vue JS</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- <h1>{{user.title}}</h1>
+        <h2>{{user.name}}</h2>
+        <h3>{{user.age < 18 ? "u cant pass" : "pass"}}</h3>
+        <h4>{{user.movies[0]}}</h4>
+        <hr>
+        <a v-bind:href="user.url" target="_blank">google</a>
+        <hr>
+        <img :src="user.img" width="300"> -->
+        <!-- <h1 :class="user.classValue">
+            {{user.age > 18 ? user.classValue = "good" : user.classValue="error"}}
+            {{user.title}}
+        </h1> -->
+        <!-- <h1 v-if="user.age <=0 || user.age >=110" class="age_err">edad erronea</h1>
+        <h2 v-else-if="user.age >= 18" class="good">eres mayor de edad</h2>
+        <h1 v-else class="error">Eres menor de edad</h1> -->
+        <ul>
+            <li v-for="(movie, index) in user.movies" :key="index">{{index}} = {{movie}}</li>
+        </ul>
+    </div>
+    <script src="./main.js"></script>
+    <script>
+        const mountApp = app.mount("#app")
+    </script>
+</body>
+</html>
