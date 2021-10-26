@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Forms</title>
+</head>
+<body>
+    <div id="app">
+            <h1>{{title}}</h1>
+            <form v-on:submit.prevent="handleSubmit()">
+                <input type="text" placeholder="name" v-model.trim="datos.name"><br>
+                <input type="number" placeholder="age" v-model.number="datos.age"><br>
+                <h3>Fav langs</h3>
+                <input type="checkbox" value="Javascript" v-model="datos.langs" id="javascript">
+                <label for="javascript">Javascript</label>
+                <input type="checkbox" value="Java" v-model="datos.langs" id="java">
+                <label for="java">Java</label>
+                <input type="checkbox" value="Python" v-model="datos.langs" id="python">
+                <label for="python">Python</label><br>
+                <h3>Genre</h3>
+                <input type="radio" id="hombre" value="m" v-model="datos.genre">
+                <label for="hombre">men</label>
+                <input type="radio" id="mujer" value="f" v-model="datos.genre">
+                <label for="mujer">women</label><br><br>
+
+                <input type="submit" >
+            </form>
+    </div>
+</body>
+<script src="./js/main.js"></script>
+<script src="./js/mountApp.js"></script>
+</html>
