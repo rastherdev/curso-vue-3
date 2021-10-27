@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradients</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- etiquetas meta -->
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Gradient Generator for easy use in CSS">
+    <!-- SEO -->
+    <meta name="MobileOptimized" content="width">
+    <meta name="HandheldFriendly" content="true">
+    <!-- configuracion barra de estado IOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="manifest" href="./manifest.json">
+    <!-- iconos -->
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="./img/favicon.png">
+    <link rel="apple-touch-startup-image" href="./img/favicon.png" type="image/png">
+</head>
+
+<body>
+    <div class="in"></div>
+    <div id="app">
+        <h1>{{title}}</h1>
+        <hr>
+        <form>
+            <label>Color 1:</label>
+            <input type="color" v-model="c1">
+            <label>Color 2:</label>
+            <input type="color" v-model="c2">
+        </form>
+        <p>{{c1}}</p>
+        <p>{{c2}}</p>
+
+        <form>
+            <input type="text" v-bind:value="setColor" class="value-css">
+            <hr>
+            <label>Orientation</label><br>
+            <input type="radio" value="1" v-model.number="orientation">Right
+            <input type="radio" value="2" v-model.number="orientation">Left
+            <input type="radio" value="3" v-model.number="orientation">Top
+            <input type="radio" value="4" v-model.number="orientation">Bottom
+        </form>
+        <hr>
+        <div class="out" v-bind:style="setColor"></div>
+    </div>
+</body>
+<script src="./js/load.js"></script>
+<script src="./js/main.js"></script>
+<script src="./js/mountApp.js"></script>
+
+</html>
